@@ -1,2 +1,2 @@
-# brand
-SAMIZDATA brand guidelines
+# Brand guidelines
+

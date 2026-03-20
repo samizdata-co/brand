@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@font-face {
+  font-family: 'Konstruktor';
+  src: url('/fonts/KonstruktorRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.5rem;
+  
+  /* SAMIZDATA Brand Colors */
+  --samizdata-background: #faf9f6; /* warm off-white */
+  --samizdata-accent: #9f1853; /* deep pink/burgundy */
+  
+  /* IBM Design Language Colors */
+  --cool-gray-10: #f2f4f8;
+  --cool-gray-30: #dde1e6;
+  --cool-gray-70: #525252;
+  --cool-gray-100: #161616;
+  --blue-60: #0f62fe;
+  --green-50: #24a148;
+  --orange-50: #ff832b;
+  --red-50: #fa4d56;
+  
+  /* Animation timing functions */
+  --timing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --timing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --timing-accelerate: cubic-bezier(0.4, 0.0, 1, 1);
+
+  /* shadcn color variables */
+  --background: var(--samizdata-background);
+  --foreground: var(--cool-gray-100);
+  --card: #ffffff;
+  --card-foreground: var(--cool-gray-100);
+  --popover: #ffffff;
+  --popover-foreground: var(--cool-gray-100);
+  --primary: var(--samizdata-accent);
+  --primary-foreground: #ffffff;
+  --secondary: var(--cool-gray-10);
+  --secondary-foreground: var(--cool-gray-100);
+  --muted: var(--cool-gray-10);
+  --muted-foreground: var(--cool-gray-70);
+  --accent: var(--cool-gray-10);
+  --accent-foreground: var(--cool-gray-100);
+  --destructive: var(--red-50);
+  --destructive-foreground: #ffffff;
+  --border: var(--cool-gray-30);
+  --input: var(--cool-gray-30);
+  --ring: var(--samizdata-accent);
+}
+
+.dark {
+  --background: var(--cool-gray-100);
+  --foreground: var(--cool-gray-10);
+  --card: var(--cool-gray-70);
+  --card-foreground: var(--cool-gray-10);
+  --popover: var(--cool-gray-70);
+  --popover-foreground: var(--cool-gray-10);
+  --secondary: var(--cool-gray-70);
+  --secondary-foreground: var(--cool-gray-30);
+  --muted: var(--cool-gray-70);
+  --muted-foreground: var(--cool-gray-30);
+  --accent: var(--cool-gray-70);
+  --accent-foreground: var(--cool-gray-10);
+  --border: var(--cool-gray-70);
+  --input: var(--cool-gray-70);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent-bg);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Typography Scale */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+  
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+  
+  p, li {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+  }
+  
+  small {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  
+  code, pre {
+    font-family: 'Roboto Mono', monospace;
+  }
+  
+  /* Accessibility improvements */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* SAMIZDATA-specific utility classes */
+  .samizdata-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .samizdata-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  
+  .samizdata-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  @media (min-width: 768px) {
+    .samizdata-section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+  
+  /* Typography classes */
+  .samizdata-heading {
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  
+  .samizdata-logo {
+    font-family: 'Konstruktor', 'Roboto Slab', serif;
+    font-weight: normal;
+  }
+  
+  .samizdata-h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+  
+  .samizdata-h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+  
+  .samizdata-h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  .samizdata-h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+  
+  .samizdata-body {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+  }
+  
+  /* Button styles */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded transition-all duration-250;
+    min-height: 44px; /* Touch-friendly */
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply border border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .btn-ghost {
+    @apply text-primary bg-transparent hover:bg-primary/10 focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  /* Card styles */
+  .card {
+    @apply bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-250;
+  }
+  
+  /* Container max width */
+  .container {
+    @apply mx-auto px-6 lg:px-8;
+    max-width: 1200px;
+  }
+  
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s var(--timing-decelerate) forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s var(--timing-decelerate) forwards;
+  }
+  
+  /* Glitch effect */
+  .glitch {
+    position: relative;
+    color: var(--samizdata-accent);
+    font-weight: 700;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .glitch::before {
+    animation: glitch-1 0.5s infinite;
+    color: #ff0000;
+    z-index: -1;
+  }
+  
+  .glitch::after {
+    animation: glitch-2 0.5s infinite;
+    color: #00ffff;
+    z-index: -2;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glitch-1 {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(-2px); }
+  60% { transform: translateX(2px); }
+  80% { transform: translateX(2px); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(-2px); }
+}
