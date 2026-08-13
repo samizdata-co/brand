@@ -128,7 +128,7 @@ Capture the approved combinations in `DESIGN.md`; do not create a separate audit
 
 ## Phase 2 — Rebuild this repository around the approved system
 
-**Status: complete (2026-08-13).** The repository now contains a schema-valid `_brand.yml`, cross-project guidance, shared CSS tokens, visualization tokens, canonical mark assets, an operational README, and a dependency-free consistency/contrast check. The obsolete Roboto/Konstruktor assets and component-heavy `css/app.css` were removed; the original website brief was preserved under `docs/`.
+**Status: complete (2026-08-13).** The repository now contains a schema-valid `_brand.yml`, cross-project guidance, shared CSS tokens, visualization tokens, canonical mark assets, an operational README, and a dependency-free consistency/contrast check. The obsolete Roboto/Konstruktor assets, component-heavy `css/app.css`, and superseded migration notes were removed.
 
 ### 2.1 Replace the old `_brand.yml`
 

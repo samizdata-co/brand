@@ -168,7 +168,3 @@ When changing the identity:
 8. update each consumer deliberately.
 
 Frontend consumers refresh with their documented copy command (for `website`, `npm run brand:sync`). Repository-local skills refresh with `scripts/copy-skill.sh`. Quarto consumers run `quarto update extension samizdata-co/brand@vX.Y.Z`. Identify the installed Quarto version in `_extensions/samizdata-co/samizdata/_extension.yml`; identify frontend and graphics baselines from their artifact headers.
-
-## Repository history
-
-The previous website redesign brief is preserved in [`docs/initial-website-brief.md`](docs/initial-website-brief.md). The Phase 1 comparison is in [`docs/migration-inventory.md`](docs/migration-inventory.md). These files provide context but are not current guidance.
