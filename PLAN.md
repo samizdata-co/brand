@@ -235,7 +235,7 @@ Move historical redesign notes to an archive only if they still provide useful c
 
 ## Phase 3 — Package the Quarto brand
 
-**Status: awaiting publication verification (2026-08-13).** Implementation and local verification are complete: the extension installs from a directory and archive, survives an update without deleting consumer files, and renders the HTML fixture with light/dark fonts, colors, and logo assets. Quarto distribution requires `_extensions/samizdata/`, so the canonical root files are synchronized into that directory and checked for drift. PDF requires locally available brand fonts and is documented as a consumer delivery override. The remaining exit criterion is installing from a published GitHub tag; creating commits/tags is deferred until explicitly requested.
+**Status: complete (2026-08-13).** Version `v0.1.0` is published to the private GitHub repository and was downloaded through authenticated GitHub access, installed as an archive, and passed the same render checks as local-directory and local-archive installation. The extension survives an update without deleting consumer files and renders the HTML fixture with light/dark fonts, colors, and logo assets. Quarto distribution requires `_extensions/samizdata/`, so canonical root files are synchronized there and checked for drift. PDF requires locally available brand fonts and is documented as a consumer delivery override.
 
 ### 3.1 Add the smallest valid brand extension
 
@@ -254,7 +254,7 @@ Quarto distribution only installs content under `_extensions/`. Keep `_brand.yml
 Use a temporary Quarto project to verify that:
 
 - [x] the extension installs from a local path;
-- [ ] it installs from the GitHub repository/tag (requires a published commit/tag);
+- [x] it installs from the private GitHub repository/tag through an authenticated archive;
 - [x] `_brand.yml` and its assets resolve correctly;
 - [x] HTML renders with the intended fonts and semantic colors;
 - [x] PDF limitations and the local-font requirement are documented;
@@ -276,7 +276,7 @@ Keep the fixture only if it provides ongoing value as a smoke test.
 
 **Phase 3 exit criteria**
 
-- [ ] A tagged copy of this repository can be installed as a Quarto brand extension.
+- [x] A tagged copy of this repository can be installed as a Quarto brand extension.
 - [x] A minimal document renders without missing assets or schema warnings.
 
 ---

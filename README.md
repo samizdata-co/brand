@@ -30,12 +30,15 @@ See [`DESIGN.md`](DESIGN.md) before implementing or reviewing visual work.
 
 The supported cross-repository mechanism is the `samizdata` Quarto Brand Extension. Quarto 1.8.20 or newer is required.
 
-Install from a tagged GitHub release once one is published:
+The repository is private. Download a pinned tag with authenticated GitHub CLI access, then install the archive:
 
 ```sh
+gh api repos/samizdata-co/brand/tarball/v0.1.0 > /tmp/samizdata-brand-v0.1.0.tar.gz
 cd your-quarto-project
-quarto add SAMIZDATA-CO/brand@v0.1.0
+quarto add /tmp/samizdata-brand-v0.1.0.tar.gz
 ```
+
+If the repository becomes public, the shorter `quarto add samizdata-co/brand@v0.1.0` command will work. Quarto's GitHub installer cannot currently access this private repository directly.
 
 For local development of this repository:
 
@@ -44,10 +47,10 @@ cd your-quarto-project
 quarto add /absolute/path/to/samizdata/brand
 ```
 
-Quarto copies the extension into `_extensions/samizdata/`. Commit that installed directory so the project remains reproducible. Update deliberately with a pinned tag:
+Quarto copies the extension into `_extensions/samizdata/`. Commit that installed directory so the project remains reproducible. To update, download the desired pinned tag and run:
 
 ```sh
-quarto update SAMIZDATA-CO/brand@v0.1.0
+quarto update extension /tmp/samizdata-brand-v0.1.0.tar.gz
 ```
 
 Do not reference the raw `main` branch during a build. The extension activates the brand through project metadata, so the consuming directory must contain `_quarto.yml`.
@@ -99,7 +102,7 @@ A wordmark is the mark paired with uppercase `SAMIZDATA` in Space Grotesk 900. I
 
 ## Distribution and versioning status
 
-The extension metadata is currently **0.1.0**, but no GitHub release has been published yet. Local and archive installation are tested; use an exact Git revision during migration until a tag exists. Phase 8 will add a `VERSION` file, synchronized extension/artifact versions, semantic versioning, and tagged releases. Visual or semantic token changes will then require a major version; additive tokens will be minor; non-visual fixes will be patch releases.
+The extension is published as the private GitHub tag **v0.1.0**. Local-directory, local-archive, and authenticated GitHub-tag archive installation are tested. Phase 8 will add a `VERSION` file and stronger synchronization across extension/artifact versions. Visual or semantic token changes will require a major version; additive tokens will be minor; non-visual fixes will be patch releases.
 
 ## Validate changes
 
@@ -111,10 +114,11 @@ scripts/test-quarto-extension.sh
 quarto render
 ```
 
-The token check compares critical `_brand.yml`, CSS, visualization, contrast, and extension-copy values. The extension test installs from both a local directory and an archive, renders the fixture, and verifies light/dark CSS, fonts, and logo assets. After publishing a tag, include its GitHub source to run the same checks remotely:
+The token check compares critical `_brand.yml`, CSS, visualization, contrast, and extension-copy values. The extension test installs from both a local directory and an archive, renders the fixture, and verifies light/dark CSS, fonts, and logo assets. To verify the private published tag, download its authenticated archive and pass that path as the optional third source:
 
 ```sh
-scripts/test-quarto-extension.sh SAMIZDATA-CO/brand@v0.1.0
+gh api repos/samizdata-co/brand/tarball/v0.1.0 > /tmp/samizdata-brand-v0.1.0.tar.gz
+scripts/test-quarto-extension.sh /tmp/samizdata-brand-v0.1.0.tar.gz
 ```
 
 Quarto validates `_brand.yml` and renders the local design guide and fixture.
