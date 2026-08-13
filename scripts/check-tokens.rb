@@ -7,8 +7,11 @@ ROOT = File.expand_path("..", __dir__)
 brand = YAML.safe_load_file(File.join(ROOT, "_brand.yml"))
 datavis = YAML.safe_load_file(File.join(ROOT, "datavis/tokens.yml"))
 css = File.read(File.join(ROOT, "css/tokens.css"))
+version = File.read(File.join(ROOT, "VERSION")).strip
 
 errors = []
+errors << "VERSION must use semantic versioning" unless version.match?(/\A\d+\.\d+\.\d+\z/)
+errors << "css/tokens.css header must identify v#{version}" unless css.start_with?("/* SAMIZDATA design tokens — v#{version}.")
 
 def normalize(value)
   value.to_s.strip.downcase
@@ -162,6 +165,7 @@ extension_logos = Dir[File.join(extension, "assets/logos/*")].to_h { |path| [Fil
 errors << "Quarto extension logos are stale; run scripts/sync-extension.rb" unless source_logos == extension_logos
 
 extension_meta = YAML.safe_load_file(File.join(extension, "_extension.yml"))
+errors << "Quarto extension version must match VERSION #{version}" unless extension_meta["version"].to_s == version
 errors << "Quarto extension must contribute _brand.yml" unless extension_meta.dig("contributes", "metadata", "project", "brand") == "_brand.yml"
 errors << "Quarto extension must require Quarto >=1.8.20" unless extension_meta["quarto-required"] == ">=1.8.20"
 

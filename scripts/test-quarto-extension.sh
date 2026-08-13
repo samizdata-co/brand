@@ -2,6 +2,7 @@
 set -euo pipefail
 
 root=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+version=$(<"$root/VERSION")
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
 export XDG_CACHE_HOME="$tmp/cache"
@@ -17,6 +18,7 @@ make_fixture() {
 verify_fixture() {
   local directory=$1
   test -f "$directory/_extensions/samizdata/_extension.yml"
+  grep -Fqx "version: $version" "$directory/_extensions/samizdata/_extension.yml"
   test -f "$directory/_extensions/samizdata/_brand.yml"
   test -f "$directory/_extensions/samizdata/assets/logos/mark.svg"
   test -f "$directory/_extensions/samizdata/assets/logos/mark-dark.svg"

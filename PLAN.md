@@ -20,11 +20,11 @@ The design system must serve humans, agents, Quarto, frontend projects, and data
 
 Included:
 
-- the current SAMIZDATA identity used by `../blog-astro` and `../graphics`;
+- the current SAMIZDATA identity used by `../website` and `../graphics`;
 - this repository's `_brand.yml`, documentation, logos, and installable Quarto brand;
 - the SAMIZDATA agent skill;
-- Quarto projects in `../../jobs` and `../youth-jobs-gap`;
-- frontend token alignment in `../blog-astro`;
+- the Quarto project in `../../jobs`, including `cover-letters`;
+- frontend token alignment in `../website`;
 - chart token alignment in `../graphics` and `../samizplot`;
 - a small versioning and consistency-check mechanism.
 
@@ -67,14 +67,14 @@ Use fewer files if Quarto's extension layout or the final font-delivery decision
 
 ## Phase 1 — Establish and verify the canonical identity
 
-**Status: complete (2026-08-13).** The approved baseline, accessibility results, resolved semantics, migration inventory, and intentional consumer differences are recorded in `DESIGN.md`. The current identity in `../blog-astro` is the baseline; this phase made only semantic/accessibility corrections rather than redesigning it.
+**Status: complete (2026-08-13).** The approved baseline, accessibility results, resolved semantics, migration inventory, and intentional consumer differences are recorded in `DESIGN.md`. The current identity in `../website` is the baseline; this phase made only semantic/accessibility corrections rather than redesigning it.
 
 ### 1.1 Inventory current values
 
 Compare the following files and record every conflicting color, font, radius, spacing, and semantic token:
 
-- `../blog-astro/.agents/skills/samizdata-design/references/DESIGN.md`
-- `../blog-astro/src/styles/global.css`
+- `../website/.agents/skills/samizdata-design/references/DESIGN.md`
+- `../website/src/styles/global.css`
 - `../graphics/src/lib/theme/theme.css`
 - `../graphics/src/lib/theme/colors.ts`
 - `_brand.yml`
@@ -103,7 +103,7 @@ At minimum, explicitly decide and document:
 - the canonical logo files and dark-mode behavior;
 - accessibility contrast requirements.
 
-Do not proceed while `DESIGN.md` and `blog-astro/src/styles/global.css` disagree over the meaning of `primary`.
+Do not proceed while `DESIGN.md` and `../website/src/styles/global.css` disagree over the meaning of `primary`.
 
 ### 1.3 Validate the baseline visually and accessibly
 
@@ -235,7 +235,7 @@ Move historical redesign notes to an archive only if they still provide useful c
 
 ## Phase 3 — Package the Quarto brand
 
-**Status: complete (2026-08-13).** Version `v0.1.0` is published to the private GitHub repository and was downloaded through authenticated GitHub access, installed as an archive, and passed the same render checks as local-directory and local-archive installation. The extension survives an update without deleting consumer files and renders the HTML fixture with light/dark fonts, colors, and logo assets. Quarto distribution requires `_extensions/samizdata/`, so canonical root files are synchronized there and checked for drift. PDF requires locally available brand fonts and is documented as a consumer delivery override.
+**Status: complete (2026-08-13).** Version `v0.1.0` is published to the public GitHub repository and installs directly with `quarto add samizdata-co/brand@v0.1.0`; local-directory and local-archive installation also passed. The extension survives an update without deleting consumer files and renders the HTML fixture with light/dark fonts, colors, and logo assets. Quarto distribution requires `_extensions/samizdata/`, so canonical root files are synchronized there and checked for drift. PDF requires locally available brand fonts and is documented as a consumer delivery override.
 
 ### 3.1 Add the smallest valid brand extension
 
@@ -254,7 +254,7 @@ Quarto distribution only installs content under `_extensions/`. Keep `_brand.yml
 Use a temporary Quarto project to verify that:
 
 - [x] the extension installs from a local path;
-- [x] it installs from the private GitHub repository/tag through an authenticated archive;
+- [x] it installs directly from the public GitHub repository at a pinned tag;
 - [x] `_brand.yml` and its assets resolve correctly;
 - [x] HTML renders with the intended fonts and semantic colors;
 - [x] PDF limitations and the local-font requirement are documented;
@@ -283,6 +283,8 @@ Keep the fixture only if it provides ongoing value as a smoke test.
 
 ## Phase 4 — Migrate Quarto consumers
 
+**Status: complete (2026-08-13).** `jobs` and `cover-letters` now form one Quarto project with one vendored `v0.1.0` brand. Both duplicate consumer `_brand.yml` files were removed. The representative cover-letter PDF renders successfully with matching Space Grotesk and Work Sans fonts embedded locally where Typst cannot fetch Bunny fonts. `youth-jobs-gap` was excluded from this migration at the user's direction.
+
 Migrate one project at a time. Do not bulk-replace files before the extension has passed Phase 3.
 
 ### 4.1 Migrate `../../jobs`
@@ -301,12 +303,9 @@ Migrate one project at a time. Do not bulk-replace files before the extension ha
 - Preserve the local embedded-font requirement as a narrowly scoped override if needed.
 - Render at least one cover letter to HTML and PDF.
 
-### 4.3 Migrate `../youth-jobs-gap`
+### 4.3 `youth-jobs-gap` — excluded
 
-- Add the brand extension; this project currently has no `_brand.yml` declaration.
-- Reconcile hard-coded Noto Sans/Roboto Slab and PDF colors with the canonical typography.
-- Keep publication-specific needs as documented overrides.
-- Render representative HTML and PDF outputs.
+This report was excluded from the migration at the user's direction. Its existing configuration remains unchanged.
 
 ### 4.4 Record overrides
 
@@ -329,7 +328,9 @@ Avoid copying the full canonical palette to change one value.
 
 ## Phase 5 — Align the active frontend
 
-### 5.1 Reconcile `../blog-astro`
+**Status: complete (2026-08-13).** `website` now vendors the pinned `v0.1.0` CSS token artifact, imports it from `src/styles/global.css`, and maps project-specific aliases to canonical `--sz-*` properties. A source hash in the existing distribution check detects drift in independent checkouts, while `brand:sync` and `brand:check` support sibling development checkouts. The full website verification passes, and the user approved the rendered frontend visually.
+
+### 5.1 Reconcile `../website`
 
 Treat the Astro project as the first CSS consumer:
 
@@ -338,7 +339,7 @@ Treat the Astro project as the first CSS consumer:
 - remove duplicate canonical values from local styles where practical;
 - resolve the existing `primary` mismatch rather than preserving compatibility aliases indefinitely.
 
-Do not migrate `../website` separately unless it is still deployed or maintained. It shares a remote with `../blog-astro` and appears to be an older implementation; confirm its status first.
+Do not migrate `../old-sveltekit-website` separately unless it is still deployed or maintained. It shares a remote with `../website` and is the older SvelteKit implementation.
 
 ### 5.2 Verify the frontend
 
@@ -362,6 +363,8 @@ Run the project's existing checks and inspect at least:
 ---
 
 ## Phase 6 — Align visualization implementations
+
+**Status: complete (2026-08-13).** `graphics` now matches the canonical light/dark visualization colors and exposes canonical light canvas fallbacks, including categorical, sequential, and diverging palettes. `samizplot` now packages the same palettes and uses Space Grotesk/Work Sans with canonical light chart defaults; CSS alpha gridlines are represented by their equivalent eight-digit R hex value. `scripts/check-consumers.rb` detects drift across both implementations.
 
 ### 6.1 Update `../graphics`
 
@@ -412,6 +415,8 @@ The check should fail with a useful message when a consumer's packaged defaults 
 
 ## Phase 7 — Move and improve the agent skill
 
+**Status: complete (2026-08-13).** `skills/samizdata-design/SKILL.md` is now the sole editable skill source and links directly to the canonical design, brand, web-token, and visualization-token files. Pi installation is documented for global and project settings; `website` resolves the canonical sibling skill through its local Pi settings and no longer carries an independently maintained `.agents` copy. `scripts/copy-skill.sh` creates a self-contained generated copy for agents that require repository-local skills. A real component review loaded the skill and canonical references, replaced invented radius/motion values with semantic tokens, and the full website verification passed.
+
 ### 7.1 Add the canonical skill
 
 Create `skills/samizdata-design/SKILL.md` with a precise trigger description covering:
@@ -437,7 +442,7 @@ Install or link this canonical skill in the agent environments used for SAMIZDAT
 
 After installation is verified:
 
-- remove the independently maintained skill from `../blog-astro`, or replace it with a generated copy;
+- remove the independently maintained skill from `../website`, or replace it with a generated copy;
 - add a short project instruction requiring the skill for SAMIZDATA visual work;
 - verify that relative references resolve in the installed/copied form.
 
@@ -460,6 +465,8 @@ Run a small agent task such as “review this component for SAMIZDATA design con
 ---
 
 ## Phase 8 — Version, release, and document updates
+
+**Status: complete (2026-08-13).** The stable design system is versioned as `1.0.0` across `VERSION`, Quarto extension metadata, and CSS artifact headers, with synchronization enforced by `scripts/check-tokens.rb`. The README documents semantic intent, pinned installation and update procedures, validation, skill refresh, and installed-version discovery. `website`, `graphics`, `samizplot`, and the Quarto consumer record the `v1.0.0` baseline. The release passed brand, Quarto, frontend, graphics, R-default, and cross-consumer checks and is committed and tagged `v1.0.0`.
 
 ### 8.1 Add simple versioning
 
@@ -507,20 +514,20 @@ Add concise commands to `README.md` for:
 
 ## Final acceptance checklist
 
-- [ ] This repository is the documented source of truth.
-- [ ] The current Space Grotesk/Work Sans identity is approved and internally consistent.
-- [ ] `_brand.yml` validates and resolves all assets.
-- [ ] `DESIGN.md` describes cross-project rules rather than one website implementation.
-- [ ] `datavis/tokens.yml` contains the approved chart system.
-- [ ] `css/tokens.css` contains no component/page-specific rules.
-- [ ] The Quarto brand extension installs from a tagged release.
-- [ ] `jobs`, `cover-letters`, and `youth-jobs-gap` render with the shared brand or documented overrides.
-- [ ] `blog-astro` consumes or is checked against shared CSS tokens.
-- [ ] `graphics` and `samizplot` agree on core chart defaults.
-- [ ] The agent skill is maintained here and works from at least one consumer project.
-- [ ] A small automated check detects critical drift.
-- [ ] No build fetches an unpinned remote brand automatically.
-- [ ] The first stable design-system release is tagged.
+- [x] This repository is the documented source of truth.
+- [x] The current Space Grotesk/Work Sans identity is approved and internally consistent.
+- [x] `_brand.yml` validates and resolves all assets.
+- [x] `DESIGN.md` describes cross-project rules rather than one website implementation.
+- [x] `datavis/tokens.yml` contains the approved chart system.
+- [x] `css/tokens.css` contains no component/page-specific rules.
+- [x] The Quarto brand extension installs from a tagged release.
+- [x] `jobs` and `cover-letters` render with the shared brand or documented overrides; `youth-jobs-gap` is explicitly out of scope.
+- [x] `website` consumes or is checked against shared CSS tokens.
+- [x] `graphics` and `samizplot` agree on core chart defaults.
+- [x] The agent skill is maintained here and works from at least one consumer project.
+- [x] A small automated check detects critical drift.
+- [x] No build fetches an unpinned remote brand automatically.
+- [x] The first stable design-system release is tagged.
 
 ## Later work
 

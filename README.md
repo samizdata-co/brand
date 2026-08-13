@@ -11,6 +11,8 @@ Shared design foundations for SAMIZDATA websites, reports, training material, to
 | [`css/tokens.css`](css/tokens.css) | Shared light/dark CSS custom properties |
 | [`datavis/tokens.yml`](datavis/tokens.yml) | Chart and map colors, palettes, typography, lines, and interaction tokens |
 | [`assets/logos/`](assets/logos/) | Canonical light, dark, and raster marks |
+| [`skills/samizdata-design/`](skills/samizdata-design/) | Canonical agent skill |
+| [`VERSION`](VERSION) | Current design-system release |
 | [`PLAN.md`](PLAN.md) | Migration and rollout plan |
 
 `_brand.yml` is authoritative for portable identity values. Visualization-only concepts belong in `datavis/tokens.yml`. CSS is a distribution artifact and must remain synchronized with both.
@@ -30,15 +32,12 @@ See [`DESIGN.md`](DESIGN.md) before implementing or reviewing visual work.
 
 The supported cross-repository mechanism is the `samizdata` Quarto Brand Extension. Quarto 1.8.20 or newer is required.
 
-The repository is private. Download a pinned tag with authenticated GitHub CLI access, then install the archive:
+Install the pinned public release from GitHub:
 
 ```sh
-gh api repos/samizdata-co/brand/tarball/v0.1.0 > /tmp/samizdata-brand-v0.1.0.tar.gz
 cd your-quarto-project
-quarto add /tmp/samizdata-brand-v0.1.0.tar.gz
+quarto add samizdata-co/brand@v1.0.0
 ```
-
-If the repository becomes public, the shorter `quarto add samizdata-co/brand@v0.1.0` command will work. Quarto's GitHub installer cannot currently access this private repository directly.
 
 For local development of this repository:
 
@@ -47,10 +46,10 @@ cd your-quarto-project
 quarto add /absolute/path/to/samizdata/brand
 ```
 
-Quarto copies the extension into `_extensions/samizdata/`. Commit that installed directory so the project remains reproducible. To update, download the desired pinned tag and run:
+Quarto copies the extension into `_extensions/samizdata-co/samizdata/`. Commit that installed directory so the project remains reproducible. To update deliberately to a released tag, run:
 
 ```sh
-quarto update extension /tmp/samizdata-brand-v0.1.0.tar.gz
+quarto update extension samizdata-co/brand@v1.0.0
 ```
 
 Do not reference the raw `main` branch during a build. The extension activates the brand through project metadata, so the consuming directory must contain `_quarto.yml`.
@@ -65,7 +64,33 @@ The default web font source is Bunny Fonts. HTML supports light/dark mode and th
 
 ## Use with agents
 
-The current agent-facing implementation remains in `../blog-astro/.agents/skills/samizdata-design/` while consumers are migrated. Phase 7 will move the canonical skill into this repository and document installation for each agent environment. Until then, agents should read this repository's `DESIGN.md`, `_brand.yml`, and relevant token file directly; do not create another independently maintained skill copy.
+[`skills/samizdata-design/SKILL.md`](skills/samizdata-design/SKILL.md) is the only independently editable skill source. Its reference links resolve directly to the canonical files in this repository.
+
+For Pi, add the checkout's skill directory to `~/.pi/agent/settings.json`:
+
+```json
+{
+  "skills": ["/absolute/path/to/brand/skills"]
+}
+```
+
+Alternatively, add a path relative to a consuming project's `.pi/settings.json`. In the sibling layout used by this workspace, `website/.pi/settings.json` contains:
+
+```json
+{
+  "skills": ["../../brand/skills"]
+}
+```
+
+Restart Pi, trust project settings when prompted, and invoke `/skill:samizdata-design` to force loading. Pi otherwise activates it from its description when a task matches.
+
+If an agent requires a self-contained repository-local skill, generate a copy from the brand checkout:
+
+```sh
+scripts/copy-skill.sh /path/to/consumer/.agents/skills/samizdata-design
+```
+
+The command dereferences canonical reference links so the copy works without a sibling checkout. Do not edit generated copies; rerun the command from a known brand revision to update them.
 
 ## Use in frontend projects
 
@@ -100,9 +125,17 @@ The categorical palette is unordered. The sequential palette runs light to dark.
 
 A wordmark is the mark paired with uppercase `SAMIZDATA` in Space Grotesk 900. It remains typographic rather than being frozen into an inaccessible or font-dependent SVG.
 
-## Distribution and versioning status
+## Distribution and versioning
 
-The extension is published as the private GitHub tag **v0.1.0**. Local-directory, local-archive, and authenticated GitHub-tag archive installation are tested. Phase 8 will add a `VERSION` file and stronger synchronization across extension/artifact versions. Visual or semantic token changes will require a major version; additive tokens will be minor; non-visual fixes will be patch releases.
+The stable design-system release is **v1.0.0**. `VERSION`, the Quarto extension metadata, and distribution-artifact headers must carry the same version; `scripts/check-tokens.rb` enforces this.
+
+Use semantic intent:
+
+- **patch:** documentation corrections or output fixes without a visual change;
+- **minor:** additive tokens, assets, or backward-compatible guidance;
+- **major:** changed token meaning, removed tokens, typography changes, or an intentional redesign.
+
+Consumer projects remain independently versioned. They record the brand release they consume rather than adopting the brand repository's package version.
 
 ## Validate changes
 
@@ -110,15 +143,15 @@ Requirements: Ruby (standard library only) and Quarto.
 
 ```sh
 ruby scripts/check-tokens.rb
+ruby scripts/check-consumers.rb # with graphics/ and samizplot/ sibling checkouts
 scripts/test-quarto-extension.sh
 quarto render
 ```
 
-The token check compares critical `_brand.yml`, CSS, visualization, contrast, and extension-copy values. The extension test installs from both a local directory and an archive, renders the fixture, and verifies light/dark CSS, fonts, and logo assets. To verify the private published tag, download its authenticated archive and pass that path as the optional third source:
+The token check compares versions, critical `_brand.yml`, CSS, visualization, contrast, and extension-copy values. The consumer check compares the recorded brand version, canonical chart colors, palettes, and font roles with the packaged defaults in `graphics` and `samizplot`. The extension test installs from both a local directory and an archive, renders the fixture, and verifies light/dark CSS, fonts, and logo assets. After publishing a tag, pass it as the optional third source:
 
 ```sh
-gh api repos/samizdata-co/brand/tarball/v0.1.0 > /tmp/samizdata-brand-v0.1.0.tar.gz
-scripts/test-quarto-extension.sh /tmp/samizdata-brand-v0.1.0.tar.gz
+scripts/test-quarto-extension.sh samizdata-co/brand@v1.0.0
 ```
 
 Quarto validates `_brand.yml` and renders the local design guide and fixture.
@@ -128,9 +161,13 @@ When changing the identity:
 1. update `_brand.yml`;
 2. update the matching CSS and visualization artifacts;
 3. update `DESIGN.md` if meaning or guidance changed;
-4. run the checks above;
-5. review light and dark output, keyboard focus, contrast, and reduced motion;
-6. release and update consumers deliberately once versioning is introduced in Phase 8.
+4. choose the next version and update `VERSION`, extension metadata, and artifact headers;
+5. run the checks above;
+6. review light and dark output, keyboard focus, contrast, and reduced motion;
+7. commit and tag the release;
+8. update each consumer deliberately.
+
+Frontend consumers refresh with their documented copy command (for `website`, `npm run brand:sync`). Repository-local skills refresh with `scripts/copy-skill.sh`. Quarto consumers run `quarto update extension samizdata-co/brand@vX.Y.Z`. Identify the installed Quarto version in `_extensions/samizdata-co/samizdata/_extension.yml`; identify frontend and graphics baselines from their artifact headers.
 
 ## Repository history
 
