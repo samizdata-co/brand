@@ -1,2 +1,7 @@
 /.quarto/
+/output/
+/example.pdf
+/example.tex
+/example.log
+/example_files/
 **/*.quarto_ipynb

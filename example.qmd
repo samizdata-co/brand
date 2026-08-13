@@ -1,0 +1,50 @@
+---
+title: SAMIZDATA brand fixture
+description: A minimal smoke test for portable brand output.
+---
+
+## Identity and typography
+
+{{< brand logo small >}}
+
+SAMIZDATA researches, writes, and builds data tools for media organisations, NGOs, and other public-benefit organisations.
+
+[This accessible brand link](https://samizdata.co) exercises link color and decoration. **Strong text**, *emphasis*, `inline_code()`, and a keyboard focusable link should remain clear in both modes.
+
+## Code
+
+```r
+share <- 0.618
+message(sprintf("Observed share: %.1f%%", share * 100))
+```
+
+## Table
+
+| Measure | Value | Change |
+|---|---:|---:|
+| Investigations | 24 | +14% |
+| Visualisations | 38 | +9% |
+| Training sessions | 16 | −6% |
+
+## Semantic content
+
+::: {.callout-note}
+## Information
+The brand should preserve readable hierarchy in informational callouts.
+:::
+
+::: {.callout-warning}
+## Warning
+Color is never the only carrier of meaning.
+:::
+
+::: {.callout-important}
+## Important
+Focus, contrast, and reduced motion are requirements.
+:::
+
+## Logo variants
+
+The mode-aware small logo emits the appropriate light and dark resources:
+
+{{< brand logo small >}}

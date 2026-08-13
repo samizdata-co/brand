@@ -1,61 +1,14 @@
 project:
   output-dir: output
-  execute-dir: project
+  render:
+    - DESIGN.md
+    - example.qmd
 
 brand: _brand.yml
 
-number-sections: false
 toc: true
 toc-location: left
-date: last-modified
-
-output:
-  html_document:
-    keep_md: false
-    keep_ipynb: false
-
-execute:
-  cache: true
 
 format:
   html:
-    theme:
-      light: simplex
-      dark: darkly
-    embed-resources: true
-    code-tools: true
-    code-fold: true
-    standalone: true
-  pdf:
-    pdf-engine: xelatex
-    colorlinks: true
-    include-in-header:
-      text: |
-        \usepackage[table]{xcolor}
-        \usepackage{array}
-        \usepackage{booktabs}
-        \usepackage{longtable}
-        \usepackage{colortbl}
-        \usepackage{etoolbox}
-        \usepackage{fontspec}
-        \definecolor{pagebg}{HTML}{FAF9F6}
-        \definecolor{rowbg}{RGB}{245,242,236}
-        \definecolor{bodytext}{HTML}{161616}
-        \definecolor{linkaccent}{RGB}{159,24,83}
-        \setmainfont{Roboto}
-        \newfontfamily\headingfont{Roboto Slab}
-        \setkomafont{title}{\headingfont\color{bodytext}\fontsize{28}{32}\selectfont}
-        \setkomafont{section}{\headingfont\color{bodytext}\fontsize{22}{26}\selectfont}
-        \setkomafont{subsection}{\headingfont\color{bodytext}\fontsize{18}{22}\selectfont}
-        \setkomafont{subsubsection}{\headingfont\color{bodytext}\fontsize{15}{19}\selectfont}
-        \setkomafont{paragraph}{\headingfont\color{bodytext}\fontsize{13}{17}\selectfont}
-        \RedeclareSectionCommand[runin=false,afterskip=.6\baselineskip]{paragraph}
-        \pagecolor{pagebg}
-        \color{bodytext}
-        \setlength{\tabcolsep}{8pt}
-        \setlength{\extrarowheight}{3pt}
-        \renewcommand{\arraystretch}{1.3}
-        \arrayrulecolor{bodytext!30}
-        \AtBeginEnvironment{longtable}{\rowcolors{2}{pagebg}{rowbg}}
-        \AtBeginEnvironment{tabular}{\rowcolors{2}{pagebg}{rowbg}}
-        \AtBeginDocument{\hypersetup{colorlinks=true,linkcolor=linkaccent,urlcolor=linkaccent,citecolor=linkaccent}}
+    smooth-scroll: true

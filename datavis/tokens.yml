@@ -1,0 +1,112 @@
+meta:
+  name: SAMIZDATA data visualisation tokens
+  description: Chart-specific extensions to the core brand in ../_brand.yml.
+
+color:
+  foreground:
+    light: "#1B1C19"
+    dark: "#F4EFE9"
+  muted:
+    light: "#574146"
+    dark: "#C2B7B3"
+  background:
+    light: "#FBF9F4"
+    dark: "#111311"
+  surface:
+    light: "#FFFFFF"
+    dark: "#181A18"
+  surface-low:
+    light: "#F5F3EE"
+    dark: "#202220"
+  border:
+    light: "rgba(138, 112, 118, 0.28)"
+    dark: "rgba(255, 255, 255, 0.18)"
+  axis:
+    light: "#8A7076"
+    dark: "#A99CA0"
+  gridline:
+    light: "rgba(138, 112, 118, 0.3)"
+    dark: "rgba(255, 255, 255, 0.16)"
+  baseline:
+    light: "#574146"
+    dark: "#C2B7B3"
+  accent:
+    light: "#9F1853"
+    dark: "#F078A6"
+  area-fill:
+    light: "rgba(159, 24, 83, 0.14)"
+    dark: "rgba(240, 120, 166, 0.18)"
+  selection:
+    light: "rgba(159, 24, 83, 0.26)"
+    dark: "rgba(198, 33, 104, 0.32)"
+  focus:
+    light: "#7B003C"
+    dark: "#F078A6"
+
+palette:
+  categorical:
+    - "#9F1853"
+    - "#28666E"
+    - "#C26D3A"
+    - "#60569B"
+    - "#67823A"
+    - "#A64B37"
+    - "#397C8C"
+    - "#8A6075"
+  sequential:
+    - "#F8EDF2"
+    - "#EDCAD8"
+    - "#DDA0B9"
+    - "#C96891"
+    - "#AD3267"
+    - "#8B0C48"
+    - "#5D002E"
+  diverging:
+    negative: "#28666E"
+    midpoint:
+      light: "#F0EEE9"
+      dark: "#202220"
+    positive: "#9F1853"
+
+typography:
+  sans: Work Sans
+  display: Space Grotesk
+  serif: Georgia
+  axis-size: 0.6875rem
+  label-size: 0.75rem
+  annotation-size: 0.75rem
+  tooltip-size: 0.8125rem
+  regular-weight: 400
+  strong-weight: 700
+
+line:
+  hairline-width: 1px
+  standard-width: 2px
+  emphasis-width: 3px
+  gridline-dash: "2 2"
+  data-dash: none
+
+spacing:
+  1: 0.25rem
+  2: 0.5rem
+  3: 1rem
+  4: 1.5rem
+  5: 2rem
+  6: 4rem
+
+tooltip:
+  surface:
+    light: "rgba(255, 255, 255, 0.94)"
+    dark: "rgba(24, 26, 24, 0.96)"
+  border:
+    light: "rgba(138, 112, 118, 0.3)"
+    dark: "rgba(255, 255, 255, 0.18)"
+  shadow:
+    light: "0 0.5rem 1.5rem rgba(123, 0, 60, 0.10)"
+    dark: "0 0.75rem 1.75rem rgba(0, 0, 0, 0.35)"
+
+interaction:
+  focus-width: 2px
+  focus-offset: 3px
+  transition-duration: 200ms
+  reduced-motion-duration: 0ms
