@@ -31,3 +31,8 @@ rsvg-convert -o business-card.png -w 1100 business-card.svg
 ```
 
 This requires `rsvg-convert` (from librsvg).
+
+## Suppliers
+
+- [Pictografic](https://pictografic.md/magazin-online/tipografie/produse-poligrafice/carti-de-vizita-standard/): 180 MDL / 100
+- [TGPrint](https://tgprint.md/products/carti-de-vizita-standard): 180 MDL / 100

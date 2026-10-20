@@ -12,11 +12,11 @@
 
   <text x="42" y="156" fill="#1B1C19" font-family="Space Grotesk, sans-serif" font-size="57" font-weight="900" letter-spacing="-2.3">Nicu</text>
   <text x="42" y="215" fill="#1B1C19" font-family="Space Grotesk, sans-serif" font-size="57" font-weight="900" letter-spacing="-2.3">Calcea</text>
-  <text x="42" y="258" fill="#574146" font-family="Work Sans, sans-serif" font-size="20" font-weight="500">Investigative Data Journalist</text>
-  <text x="42" y="298" fill="#574146" font-family="Work Sans, sans-serif" font-size="18" font-weight="400">
+  <text x="42" y="258" fill="#574146" font-family="Work Sans, sans-serif" font-size="22" font-weight="500">Investigative Data Journalist</text>
+  <text x="42" y="298" fill="#574146" font-family="Work Sans, sans-serif" font-size="20" font-weight="400">
     <tspan x="42" dy="0">I research, write and build data</tspan>
-    <tspan x="42" dy="25">tools for media organisations, NGOs</tspan>
-    <tspan x="42" dy="25">and other public-benefit institutions.</tspan>
+    <tspan x="42" dy="28">tools for media organisations, NGOs</tspan>
+    <tspan x="42" dy="28">and other public-benefit institutions.</tspan>
   </text>
 
   <rect y="400" width="550" height="450" fill="#7B003C"/>
