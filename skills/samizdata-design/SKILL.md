@@ -1,11 +1,11 @@
 ---
 name: samizdata-design
-description: Apply and review SAMIZDATA design across UI/UX, websites, components, Quarto documents, charts, maps, and data visualisations. Use for SAMIZDATA logos, colors, typography, layout, interaction, responsive behavior, dark mode, motion, and visual accessibility.
+description: Use this skill every time you design a SAMIZDATA website, Quarto document, chart, map, or any other project. This includes the nicu.md website.
 ---
 
 # SAMIZDATA design
 
-Use the canonical resources in this skill instead of inventing or copying visual values:
+These are the design guidelines for the SAMIZDATA brand. Always follow these principles, do not deviate from them. Use the canonical resources in this skill instead of inventing or copying visual values:
 
 - [Design guidelines](references/DESIGN.md) for principles, semantics, accessibility, and permitted adaptation.
 - [Quarto brand](references/_brand.yml) for portable identity, logo, color, and typography values.

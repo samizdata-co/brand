@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55mm" height="85mm" viewBox="0 0 550 850">
+  <title>Nicu Calcea — business card</title>
+  <desc>Portrait business card for investigative data journalist Nicu Calcea.</desc>
+  <rect width="550" height="850" fill="#FBF9F4"/>
+  <g aria-label="SAMIZDATA mark" transform="translate(42 44) scale(1.42)" fill="#7B003C">
+    <rect x="0" y="2" width="24" height="5" rx="1" opacity=".25"/>
+    <rect x="0" y="10" width="24" height="5" rx="1"/>
+    <rect x="0" y="18" width="16" height="5" rx="1" opacity=".25"/>
+  </g>
+
+  <text x="88" y="68" fill="#1B1C19" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.4">SAMIZDATA</text>
+
+  <text x="42" y="156" fill="#1B1C19" font-family="Space Grotesk, sans-serif" font-size="57" font-weight="900" letter-spacing="-2.3">Nicu</text>
+  <text x="42" y="215" fill="#1B1C19" font-family="Space Grotesk, sans-serif" font-size="57" font-weight="900" letter-spacing="-2.3">Calcea</text>
+  <text x="42" y="258" fill="#574146" font-family="Work Sans, sans-serif" font-size="20" font-weight="500">Investigative Data Journalist</text>
+  <text x="42" y="298" fill="#574146" font-family="Work Sans, sans-serif" font-size="18" font-weight="400">
+    <tspan x="42" dy="0">I research, write and build data</tspan>
+    <tspan x="42" dy="25">tools for media organisations, NGOs</tspan>
+    <tspan x="42" dy="25">and other public-benefit institutions.</tspan>
+  </text>
+
+  <rect y="400" width="550" height="450" fill="#7B003C"/>
+  <g transform="translate(0 40)">
+  <text x="42" y="452" fill="#FFFFFF" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="700" letter-spacing="1.5">CONTACT</text>
+  <line x1="42" y1="472" x2="302" y2="472" stroke="#FFFFFF" stroke-opacity=".28"/>
+
+  <svg x="44" y="491" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F4EFE9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Email">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/>
+  </svg>
+  <text x="82" y="510" fill="#FFFFFF" font-family="Work Sans, sans-serif" font-size="24" font-weight="500">mail@nicu.md</text>
+  <svg x="44" y="528" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F4EFE9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Personal website">
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </svg>
+  <text x="82" y="547" fill="#FFFFFF" font-family="Work Sans, sans-serif" font-size="22" font-weight="500">nicu.md</text>
+  <svg x="44" y="561" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F4EFE9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Work website">
+    <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+    <rect width="20" height="14" x="2" y="6" rx="2"/>
+  </svg>
+  <text x="82" y="580" fill="#FFFFFF" font-family="Work Sans, sans-serif" font-size="22" font-weight="500">samizdata.co</text>
+  <line x1="42" y1="605" x2="302" y2="605" stroke="#FFFFFF" stroke-opacity=".28"/>
+
+  <g transform="translate(0 82)">
+  <svg x="42" y="541" width="30" height="20" viewBox="0 0 30 20" aria-label="United Kingdom flag">
+    <rect width="30" height="20" fill="#F5F5F5"/>
+    <path d="M30 0.00012207H0V20H30V0.00012207Z" fill="#F0F0F0"/>
+    <path d="M16.875 0H13.125V8.1248H0V11.8747H13.125V19.9995H16.875V11.8747H30V8.1248H16.875V0Z" fill="#D80027"/>
+    <path d="M23.0742 13.4779L30.0009 17.326V13.4779H23.0742Z" fill="#0052B4"/>
+    <path d="M18.2617 13.4779L30.0009 19.9995V18.1554L21.5813 13.4779H18.2617Z" fill="#0052B4"/>
+    <path d="M26.8739 19.9995L18.2617 15.2146V19.9995H26.8739Z" fill="#0052B4"/>
+    <path d="M18.2617 13.4779L30.0009 19.9995V18.1554L21.5813 13.4779H18.2617Z" fill="#F0F0F0"/>
+    <path d="M18.2617 13.4779L30.0009 19.9995V18.1554L21.5813 13.4779H18.2617Z" fill="#D80027"/>
+    <path d="M5.29341 13.4778L0 16.4185V13.4778H5.29341Z" fill="#0052B4"/>
+    <path d="M11.7397 14.3071V19.9995H1.49414L11.7397 14.3071Z" fill="#0052B4"/>
+    <path d="M8.41951 13.4779L0 18.1554V19.9995L11.7391 13.4779H8.41951Z" fill="#D80027"/>
+    <path d="M6.92665 6.52159L0 2.67346V6.52159H6.92665Z" fill="#0052B4"/>
+    <path d="M11.7391 6.52159L0 0V1.84414L8.41951 6.52159H11.7391Z" fill="#0052B4"/>
+    <path d="M3.12695 0L11.7392 4.78491V0H3.12695Z" fill="#0052B4"/>
+    <path d="M11.7391 6.52159L0 0V1.84414L8.41951 6.52159H11.7391Z" fill="#F0F0F0"/>
+    <path d="M11.7391 6.52159L0 0V1.84414L8.41951 6.52159H11.7391Z" fill="#D80027"/>
+    <path d="M24.707 6.5217L30.0004 3.58093V6.5217H24.707Z" fill="#0052B4"/>
+    <path d="M18.2617 5.69233V0H28.5072L18.2617 5.69233Z" fill="#0052B4"/>
+    <path d="M21.5813 6.52159L30.0009 1.84414V0L18.2617 6.52159H21.5813Z" fill="#D80027"/>
+  </svg>
+  <text x="84" y="558" fill="#FFFFFF" font-family="Work Sans, sans-serif" font-size="22" font-weight="500">+44 7784 751562</text>
+  <svg x="87" y="571" width="20" height="20" viewBox="0 0 24 24" aria-label="WhatsApp">
+    <path fill="#F4EFE9" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </svg>
+  <svg x="119" y="571" width="20" height="20" viewBox="0 0 24 24" aria-label="Signal">
+    <path fill="#F4EFE9" d="M12 0q-.934 0-1.83.139l.17 1.111a11 11 0 0 1 3.32 0l.172-1.111A12 12 0 0 0 12 0M9.152.34A12 12 0 0 0 5.77 1.742l.584.961a10.8 10.8 0 0 1 3.066-1.27zm5.696 0-.268 1.094a10.8 10.8 0 0 1 3.066 1.27l.584-.962A12 12 0 0 0 14.848.34M12 2.25a9.75 9.75 0 0 0-8.539 14.459c.074.134.1.292.064.441l-1.013 4.338 4.338-1.013a.62.62 0 0 1 .441.064A9.7 9.7 0 0 0 12 21.75c5.385 0 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m-7.092.068a12 12 0 0 0-2.59 2.59l.909.664a11 11 0 0 1 2.345-2.345zm14.184 0-.664.909a11 11 0 0 1 2.345 2.345l.909-.664a12 12 0 0 0-2.59-2.59M1.742 5.77A12 12 0 0 0 .34 9.152l1.094.268a10.8 10.8 0 0 1 1.269-3.066zm20.516 0-.961.584a10.8 10.8 0 0 1 1.27 3.066l1.093-.268a12 12 0 0 0-1.402-3.383M.138 10.168q0 .934.139 1.83l1.111-.17A11 11 0 0 1 1.125 12q0-.848.125-1.66zm23.723.002-1.111.17q.125.812.125 1.66c0 .848-.042 1.12-.125 1.66l1.111.172a12.1 12.1 0 0 0 0-3.662M1.434 14.58l-1.094.268a12 12 0 0 0 .96 2.591l-.265 1.14 1.096.255.36-1.539-.188-.365a10.8 10.8 0 0 1-.87-2.35m21.133 0a10.8 10.8 0 0 1-1.27 3.067l.962.584a12 12 0 0 0 1.402-3.383zm-1.793 3.848a11 11 0 0 1-2.345 2.345l.664.909a12 12 0 0 0 2.59-2.59zm-19.959 1.1L.357 21.48a1.8 1.8 0 0 0 2.162 2.161l1.954-.455-.256-1.095-1.953.455a.675.675 0 0 1-.81-.81l.454-1.954zm16.832 1.769a10.8 10.8 0 0 1-3.066 1.27l.268 1.093a12 12 0 0 0 3.382-1.402zm-10.94.213-1.54.36.256 1.095 1.139-.266c.814.415 1.683.74 2.591.961l.268-1.094a10.8 10.8 0 0 1-2.35-.869zm3.634 1.24-.172 1.111a12.1 12.1 0 0 0 3.662 0l-.17-1.111q-.812.125-1.66.125a11 11 0 0 1-1.66-.125"/>
+  </svg>
+
+  <svg x="42" y="619" width="30" height="20" viewBox="0 0 30 20" aria-label="Moldova flag">
+    <rect width="30" height="20" fill="#F5F5F5"/>
+    <path d="M30 0H0V19.9994H30V0Z" fill="#FFDA44"/>
+    <path d="M29.9996 0H19.3477V20H29.9996V0Z" fill="#D80027"/>
+    <path d="M10.6519 0H0V20H10.6519V0Z" fill="#0052B4"/>
+    <path d="M18.4781 7.8676H16.0868C16.0868 7.26737 15.6001 6.78064 14.9998 6.78064C14.3994 6.78064 13.9128 7.26731 13.9128 7.8676H11.5215C11.5215 8.45869 12.0363 8.9378 12.6274 8.9378H12.5918C12.5918 9.52889 13.0708 10.0081 13.662 10.0081C13.662 10.5314 14.0378 10.9662 14.5342 11.0592L13.6909 12.9632C14.0949 13.1274 14.5366 13.2187 14.9997 13.2187C15.4629 13.2187 15.9045 13.1274 16.3086 12.9632L15.4653 11.0592C15.9617 10.9662 16.3375 10.5314 16.3375 10.0081C16.9287 10.0081 17.4078 9.52883 17.4078 8.9378H17.3721C17.9633 8.93775 18.4781 8.45857 18.4781 7.8676Z" fill="#FF9811"/>
+    <path d="M15.0009 9.34753L13.5879 9.99968V11.304L15.0009 12.1735L16.414 11.304V9.99968L15.0009 9.34753Z" fill="#0052B4"/>
+    <path d="M16.4118 8.69543H13.5859V9.99978H16.4118V8.69543Z" fill="#D80027"/>
+  </svg>
+  <text x="84" y="637" fill="#FFFFFF" font-family="Work Sans, sans-serif" font-size="22" font-weight="500">+373 699 93 781</text>
+  </g>
+  </g>
+
+  <line x1="322" y1="442" x2="322" y2="808" stroke="#FFFFFF" stroke-opacity=".28"/>
+  <svg x="342" y="542" width="166" height="166" viewBox="0 0 33 33" aria-label="QR code linking to nicu.md/">
+    <g transform="translate(4 4)">
+      <path fill="#F4EFE9" d="M0,0h1v1h-1zM1,0h1v1h-1zM2,0h1v1h-1zM3,0h1v1h-1zM4,0h1v1h-1zM5,0h1v1h-1zM6,0h1v1h-1zM10,0h1v1h-1zM14,0h1v1h-1zM18,0h1v1h-1zM19,0h1v1h-1zM20,0h1v1h-1zM21,0h1v1h-1zM22,0h1v1h-1zM23,0h1v1h-1zM24,0h1v1h-1zM0,1h1v1h-1zM6,1h1v1h-1zM9,1h1v1h-1zM13,1h1v1h-1zM18,1h1v1h-1zM24,1h1v1h-1zM0,2h1v1h-1zM2,2h1v1h-1zM3,2h1v1h-1zM4,2h1v1h-1zM6,2h1v1h-1zM8,2h1v1h-1zM11,2h1v1h-1zM15,2h1v1h-1zM18,2h1v1h-1zM20,2h1v1h-1zM21,2h1v1h-1zM22,2h1v1h-1zM24,2h1v1h-1zM0,3h1v1h-1zM2,3h1v1h-1zM3,3h1v1h-1zM4,3h1v1h-1zM6,3h1v1h-1zM9,3h1v1h-1zM12,3h1v1h-1zM13,3h1v1h-1zM18,3h1v1h-1zM20,3h1v1h-1zM21,3h1v1h-1zM22,3h1v1h-1zM24,3h1v1h-1zM0,4h1v1h-1zM2,4h1v1h-1zM3,4h1v1h-1zM4,4h1v1h-1zM6,4h1v1h-1zM9,4h1v1h-1zM12,4h1v1h-1zM13,4h1v1h-1zM16,4h1v1h-1zM18,4h1v1h-1zM20,4h1v1h-1zM21,4h1v1h-1zM22,4h1v1h-1zM24,4h1v1h-1zM0,5h1v1h-1zM6,5h1v1h-1zM10,5h1v1h-1zM11,5h1v1h-1zM12,5h1v1h-1zM14,5h1v1h-1zM15,5h1v1h-1zM16,5h1v1h-1zM18,5h1v1h-1zM24,5h1v1h-1zM0,6h1v1h-1zM1,6h1v1h-1zM2,6h1v1h-1zM3,6h1v1h-1zM4,6h1v1h-1zM5,6h1v1h-1zM6,6h1v1h-1zM8,6h1v1h-1zM10,6h1v1h-1zM12,6h1v1h-1zM14,6h1v1h-1zM16,6h1v1h-1zM18,6h1v1h-1zM19,6h1v1h-1zM20,6h1v1h-1zM21,6h1v1h-1zM22,6h1v1h-1zM23,6h1v1h-1zM24,6h1v1h-1zM8,7h1v1h-1zM11,7h1v1h-1zM16,7h1v1h-1zM0,8h1v1h-1zM1,8h1v1h-1zM2,8h1v1h-1zM4,8h1v1h-1zM5,8h1v1h-1zM6,8h1v1h-1zM7,8h1v1h-1zM8,8h1v1h-1zM12,8h1v1h-1zM15,8h1v1h-1zM16,8h1v1h-1zM17,8h1v1h-1zM18,8h1v1h-1zM22,8h1v1h-1zM3,9h1v1h-1zM7,9h1v1h-1zM9,9h1v1h-1zM11,9h1v1h-1zM12,9h1v1h-1zM13,9h1v1h-1zM17,9h1v1h-1zM18,9h1v1h-1zM24,9h1v1h-1zM0,10h1v1h-1zM1,10h1v1h-1zM5,10h1v1h-1zM6,10h1v1h-1zM7,10h1v1h-1zM10,10h1v1h-1zM11,10h1v1h-1zM12,10h1v1h-1zM14,10h1v1h-1zM16,10h1v1h-1zM22,10h1v1h-1zM23,10h1v1h-1zM24,10h1v1h-1zM0,11h1v1h-1zM2,11h1v1h-1zM3,11h1v1h-1zM4,11h1v1h-1zM7,11h1v1h-1zM8,11h1v1h-1zM9,11h1v1h-1zM10,11h1v1h-1zM12,11h1v1h-1zM13,11h1v1h-1zM14,11h1v1h-1zM15,11h1v1h-1zM16,11h1v1h-1zM20,11h1v1h-1zM23,11h1v1h-1zM0,12h1v1h-1zM2,12h1v1h-1zM6,12h1v1h-1zM7,12h1v1h-1zM10,12h1v1h-1zM11,12h1v1h-1zM14,12h1v1h-1zM16,12h1v1h-1zM17,12h1v1h-1zM18,12h1v1h-1zM21,12h1v1h-1zM23,12h1v1h-1zM24,12h1v1h-1zM2,13h1v1h-1zM3,13h1v1h-1zM4,13h1v1h-1zM7,13h1v1h-1zM8,13h1v1h-1zM10,13h1v1h-1zM11,13h1v1h-1zM14,13h1v1h-1zM16,13h1v1h-1zM17,13h1v1h-1zM18,13h1v1h-1zM21,13h1v1h-1zM24,13h1v1h-1zM0,14h1v1h-1zM2,14h1v1h-1zM3,14h1v1h-1zM4,14h1v1h-1zM5,14h1v1h-1zM6,14h1v1h-1zM7,14h1v1h-1zM9,14h1v1h-1zM10,14h1v1h-1zM13,14h1v1h-1zM18,14h1v1h-1zM19,14h1v1h-1zM22,14h1v1h-1zM23,14h1v1h-1zM24,14h1v1h-1zM1,15h1v1h-1zM2,15h1v1h-1zM3,15h1v1h-1zM4,15h1v1h-1zM7,15h1v1h-1zM8,15h1v1h-1zM9,15h1v1h-1zM11,15h1v1h-1zM15,15h1v1h-1zM16,15h1v1h-1zM18,15h1v1h-1zM20,15h1v1h-1zM23,15h1v1h-1zM0,16h1v1h-1zM3,16h1v1h-1zM6,16h1v1h-1zM10,16h1v1h-1zM12,16h1v1h-1zM15,16h1v1h-1zM16,16h1v1h-1zM17,16h1v1h-1zM18,16h1v1h-1zM19,16h1v1h-1zM20,16h1v1h-1zM21,16h1v1h-1zM8,17h1v1h-1zM9,17h1v1h-1zM11,17h1v1h-1zM12,17h1v1h-1zM13,17h1v1h-1zM15,17h1v1h-1zM16,17h1v1h-1zM20,17h1v1h-1zM21,17h1v1h-1zM23,17h1v1h-1zM24,17h1v1h-1zM0,18h1v1h-1zM1,18h1v1h-1zM2,18h1v1h-1zM3,18h1v1h-1zM4,18h1v1h-1zM5,18h1v1h-1zM6,18h1v1h-1zM8,18h1v1h-1zM9,18h1v1h-1zM11,18h1v1h-1zM12,18h1v1h-1zM14,18h1v1h-1zM15,18h1v1h-1zM16,18h1v1h-1zM18,18h1v1h-1zM20,18h1v1h-1zM21,18h1v1h-1zM23,18h1v1h-1zM24,18h1v1h-1zM0,19h1v1h-1zM6,19h1v1h-1zM8,19h1v1h-1zM9,19h1v1h-1zM10,19h1v1h-1zM12,19h1v1h-1zM13,19h1v1h-1zM14,19h1v1h-1zM16,19h1v1h-1zM20,19h1v1h-1zM21,19h1v1h-1zM23,19h1v1h-1zM0,20h1v1h-1zM2,20h1v1h-1zM3,20h1v1h-1zM4,20h1v1h-1zM6,20h1v1h-1zM8,20h1v1h-1zM9,20h1v1h-1zM11,20h1v1h-1zM14,20h1v1h-1zM16,20h1v1h-1zM17,20h1v1h-1zM18,20h1v1h-1zM19,20h1v1h-1zM20,20h1v1h-1zM21,20h1v1h-1zM24,20h1v1h-1zM0,21h1v1h-1zM2,21h1v1h-1zM3,21h1v1h-1zM4,21h1v1h-1zM6,21h1v1h-1zM11,21h1v1h-1zM14,21h1v1h-1zM15,21h1v1h-1zM16,21h1v1h-1zM19,21h1v1h-1zM20,21h1v1h-1zM21,21h1v1h-1zM22,21h1v1h-1zM0,22h1v1h-1zM2,22h1v1h-1zM3,22h1v1h-1zM4,22h1v1h-1zM6,22h1v1h-1zM8,22h1v1h-1zM9,22h1v1h-1zM13,22h1v1h-1zM15,22h1v1h-1zM17,22h1v1h-1zM20,22h1v1h-1zM24,22h1v1h-1zM0,23h1v1h-1zM6,23h1v1h-1zM8,23h1v1h-1zM9,23h1v1h-1zM10,23h1v1h-1zM11,23h1v1h-1zM15,23h1v1h-1zM16,23h1v1h-1zM20,23h1v1h-1zM21,23h1v1h-1zM23,23h1v1h-1zM0,24h1v1h-1zM1,24h1v1h-1zM2,24h1v1h-1zM3,24h1v1h-1zM4,24h1v1h-1zM5,24h1v1h-1zM6,24h1v1h-1zM8,24h1v1h-1zM12,24h1v1h-1zM16,24h1v1h-1zM17,24h1v1h-1zM18,24h1v1h-1zM19,24h1v1h-1zM23,24h1v1h-1zM24,24h1v1h-1z"/>
+    </g>
+  </svg>
+</svg>
