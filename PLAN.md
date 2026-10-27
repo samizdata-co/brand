@@ -32,7 +32,7 @@ Deferred:
 
 - publishing an npm package;
 - sharing framework-specific components;
-- migrating a personal website;
+- migrating a personal website (since done: `nicu.md` vendors the `v1.0.0` CSS tokens);
 - automatic update bots;
 - a full design-token build framework such as Style Dictionary;
 - redesigning project-specific pages or charts.
@@ -537,6 +537,5 @@ Only after the first migration is stable, consider:
 - generating `_brand.yml`, CSS, TypeScript, and R artifacts from a more general token source;
 - automatic dependency update pull requests;
 - visual regression snapshots;
-- a personal-site theme that inherits SAMIZDATA foundations while keeping its own identity;
 - additional client or publication themes;
 - shared components where repeated implementations have demonstrated a real need.

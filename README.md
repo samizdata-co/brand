@@ -12,6 +12,7 @@ Shared design foundations for SAMIZDATA websites, reports, training material, to
 | [`datavis/tokens.yml`](datavis/tokens.yml) | Chart and map colors, palettes, typography, lines, and interaction tokens |
 | [`assets/logos/`](assets/logos/) | Canonical light, dark, and raster marks |
 | [`skills/samizdata-design/`](skills/samizdata-design/) | Canonical agent skill |
+| [`business-card/`](business-card/) | Business card source and renders |
 | [`VERSION`](VERSION) | Current design-system release |
 | [`PLAN.md`](PLAN.md) | Migration and rollout plan |
 
@@ -167,4 +168,4 @@ When changing the identity:
 7. commit and tag the release;
 8. update each consumer deliberately.
 
-Frontend consumers refresh with their documented copy command (for `website`, `npm run brand:sync`). Repository-local skills refresh with `scripts/copy-skill.sh`. Quarto consumers run `quarto update extension samizdata-co/brand@vX.Y.Z`. Identify the installed Quarto version in `_extensions/samizdata-co/samizdata/_extension.yml`; identify frontend and graphics baselines from their artifact headers.
+Frontend consumers (`website` and `nicu.md`) refresh with `npm run brand:sync` and detect drift with `npm run brand:check`. Repository-local skills refresh with `scripts/copy-skill.sh`. Quarto consumers run `quarto update extension samizdata-co/brand@vX.Y.Z`. Identify the installed Quarto version in `_extensions/samizdata-co/samizdata/_extension.yml`; identify frontend and graphics baselines from their artifact headers.
