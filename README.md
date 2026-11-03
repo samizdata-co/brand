@@ -10,13 +10,14 @@ Shared design foundations for SAMIZDATA websites, reports, training material, to
 | [`DESIGN.md`](DESIGN.md) | Human-readable principles and usage rules |
 | [`css/tokens.css`](css/tokens.css) | Shared light/dark CSS custom properties |
 | [`datavis/tokens.yml`](datavis/tokens.yml) | Chart and map colors, palettes, typography, lines, and interaction tokens |
+| [`datavis/mozaic/`](datavis/mozaic/) | The house style for mozaic charts |
 | [`assets/logos/`](assets/logos/) | Canonical light, dark, and raster marks |
 | [`skills/samizdata-design/`](skills/samizdata-design/) | Canonical agent skill |
 | [`business-card/`](business-card/) | Business card source and renders |
 | [`VERSION`](VERSION) | Current design-system release |
 | [`PLAN.md`](PLAN.md) | Migration and rollout plan |
 
-`_brand.yml` is authoritative for portable identity values. Visualization-only concepts belong in `datavis/tokens.yml`. CSS is a distribution artifact and must remain synchronized with both.
+`_brand.yml` is authoritative for portable identity values. Visualization-only concepts belong in `datavis/tokens.yml`. CSS and the mozaic theme are distribution artifacts and must remain synchronized with both.
 
 ## Current identity
 
@@ -117,6 +118,23 @@ Do not edit a vendored token file locally. Update it from a known brand revision
 Read [`datavis/tokens.yml`](datavis/tokens.yml) when implementing package defaults or generating platform-specific chart tokens. Preserve consumer overrides: data semantics and accessibility can require a project-specific palette.
 
 The categorical palette is unordered. The sequential palette runs light to dark. Use the diverging palette only around a meaningful midpoint. Low-alpha gridlines are decorative; essential axes and reference lines need at least 3:1 contrast.
+
+### mozaic charts
+
+[`datavis/mozaic/`](datavis/mozaic/) is the SAMIZDATA house style for [mozaic](https://github.com/nicucalcea/mozaic) charts, with its documented chart adaptations in the file header. Copy the folder into the project (for example to `src/lib/brand/`) and pass the theme to the chart:
+
+```svelte
+<script lang="ts">
+	import { Chart } from 'mozaic/frame';
+	import { samizdata } from '../lib/brand/theme';
+</script>
+
+<Chart style={samizdata} alt="…">…</Chart>
+```
+
+Do not edit the copy; update it from a known brand release. Projects created with [maia](https://github.com/samizdata-co/maia) for SAMIZDATA get the copy automatically and update it with `copier update`. `scripts/check-tokens.rb` checks the theme against `datavis/tokens.yml`.
+
+Known palette issues for charts: raspberry `#9f1853` and teal `#28666e`, the first two categorical colours and the diverging poles, are hard to tell apart with deuteranopia (ΔE 5.3; the floor is 6). Slots 5–6 and 7–8 are close for colour-blind readers too, and the lightest sequential step is almost invisible on the paper background (1.09:1). Pair colour with labels.
 
 ## Logos
 

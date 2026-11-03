@@ -156,6 +156,42 @@ fill_pairs.each do |name, foreground, background|
   errors << "#{name} contrast is #{score.round(2)}:1; expected at least 4.5:1" if score < 4.5
 end
 
+# The mozaic theme in datavis/mozaic/ is a distribution artifact of datavis/tokens.yml.
+mozaic = File.read(File.join(ROOT, "datavis/mozaic/theme.ts"))
+errors << "datavis/mozaic/theme.ts header must identify brand v#{version}" unless mozaic.include?("brand v#{version}.")
+mozaic_token = ->(name) { mozaic[/'--mz-#{name}':\s*'([^']+)'/, 1] }
+{
+  "color-text" => datavis.dig("color", "foreground", "light"),
+  "color-muted" => datavis.dig("color", "muted", "light"),
+  "color-bg" => datavis.dig("color", "background", "light"),
+  "color-axis" => datavis.dig("color", "axis", "light"),
+  "color-grid" => datavis.dig("color", "gridline", "light"),
+  "color-accent" => datavis.dig("color", "accent", "light"),
+  "color-tooltip-bg" => datavis.dig("tooltip", "surface", "light"),
+  "size-axis" => datavis.dig("typography", "axis-size"),
+  "weight-strong" => datavis.dig("typography", "strong-weight").to_s,
+  "grid-dash" => datavis.dig("line", "gridline-dash")
+}.each do |name, expected|
+  actual = mozaic_token.call(name)
+  errors << "mozaic --mz-#{name}: expected #{expected}, found #{actual.inspect}" unless normalize(actual) == normalize(expected)
+end
+mozaic_list = ->(name) { mozaic[/#{name}:\s*\[([^\]]+)\]/, 1].to_s.scan(/'([^']+)'/).flatten.map { |value| normalize(value) } }
+%w[categorical sequential].each do |name|
+  expected = datavis.dig("palette", name).map { |value| normalize(value) }
+  errors << "mozaic #{name} palette: expected #{expected}, found #{mozaic_list.call(name)}" unless mozaic_list.call(name) == expected
+end
+mozaic_diverging = [diverging["negative"], diverging.dig("midpoint", "light"), diverging["positive"]].map { |value| normalize(value) }
+errors << "mozaic diverging palette: expected #{mozaic_diverging}, found #{mozaic_list.call('diverging')}" unless mozaic_list.call("diverging") == mozaic_diverging
+%w[display sans].each do |role|
+  family = datavis.dig("typography", role)
+  errors << "mozaic theme does not use #{family}" unless mozaic.include?("'#{family}'")
+end
+mark = File.read(File.join(ROOT, "assets/logos/mark.svg"))
+mozaic_mark = File.read(File.join(ROOT, "datavis/mozaic/logo.ts"))
+mark.scan(/<rect [^>]+>/).each do |rect|
+  errors << "mozaic logo is missing #{rect}; copy it from assets/logos/mark.svg" unless mozaic_mark.include?(rect)
+end
+
 extension = File.join(ROOT, "_extensions/samizdata")
 extension_brand = File.join(extension, "_brand.yml")
 errors << "Quarto extension _brand.yml is stale; run scripts/sync-extension.rb" unless File.exist?(extension_brand) && File.binread(extension_brand) == File.binread(File.join(ROOT, "_brand.yml"))
