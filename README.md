@@ -121,11 +121,11 @@ The categorical palette is unordered. The sequential palette runs light to dark.
 
 ### mozaic charts
 
-[`datavis/mozaic/`](datavis/mozaic/) is the SAMIZDATA house style for [mozaic](https://github.com/nicucalcea/mozaic) charts, with its documented chart adaptations in the file header. Copy the folder into the project (for example to `src/lib/brand/`) and pass the theme to the chart:
+[`datavis/mozaic/`](datavis/mozaic/) is the SAMIZDATA house style for [mozaic](https://github.com/samizdata-co/mozaic) charts, with its documented chart adaptations in the file header. Copy the folder into the project (for example to `src/lib/brand/`) and pass the theme to the chart:
 
 ```svelte
 <script lang="ts">
-	import { Chart } from 'mozaic/frame';
+	import { Chart } from '@samizdata/mozaic/frame';
 	import { samizdata } from '../lib/brand/theme';
 </script>
 
