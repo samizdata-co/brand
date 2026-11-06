@@ -14,6 +14,7 @@ Shared design foundations for SAMIZDATA websites, reports, training material, to
 | [`assets/logos/`](assets/logos/) | Canonical light, dark, and raster marks |
 | [`skills/samizdata-design/`](skills/samizdata-design/) | Canonical agent skill |
 | [`business-card/`](business-card/) | Business card source and renders |
+| [`data/cv.json`](data/cv.json) | Shared portfolio data (work, publications, projects, skills) for `website` and `nicu.md` |
 | [`VERSION`](VERSION) | Current design-system release |
 | [`PLAN.md`](PLAN.md) | Migration and rollout plan |
 
@@ -143,6 +144,14 @@ Known palette issues for charts: raspberry `#9f1853` and teal `#28666e`, the fir
 - `assets/logos/mark-512.png`: raster fallback
 
 A wordmark is the mark paired with uppercase `SAMIZDATA` in Space Grotesk 900. It remains typographic rather than being frozen into an inaccessible or font-dependent SVG.
+
+## Portfolio data
+
+[`data/cv.json`](data/cv.json) is the only copy of the [JSON Resume](https://jsonresume.org/schema)-style portfolio data used by samizdata.co and nicu.md. Edit it here, never in a site. Each site copies it into a git-ignored path at the start of `dev`, `check` and `build` (`website/src/portfolio/cv.json`, `nicu.md/src/data/cv.json`): locally from the sibling `brand` checkout, in CI from a checkout of this repository. Override the location with `SAMIZDATA_BRAND_DIR`.
+
+Images referenced by `img` stay in the site that shows them (`website/src/portfolio/img/` and `website/src/assets/shared/`).
+
+Changes here don't redeploy the sites by themselves: after pushing, run each site's deploy workflow (`gh workflow run deploy.yml -R samizdata-co/samizdata` and `-R nicucalcea/nicucalcea`).
 
 ## Distribution and versioning
 
