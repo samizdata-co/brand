@@ -9367,6 +9367,18 @@
       "url": "https://blog.samizdata.co/"
     },
     {
+      "name": "Plebiscit.md",
+      "startDate": "2026-10-29",
+      "endDate": "",
+      "description": "A poll tracker for Moldova: a weighted average of opinion polls, a seat projection for the 101-seat parliament, and what voters think.",
+      "url": "https://plebiscit.md/",
+      "img": "plebiscit.png",
+      "skills": [
+        "Data explorers",
+        "Visualisation"
+      ]
+    },
+    {
       "name": "OpenLobbying",
       "startDate": "2025-12-01",
       "endDate": "",
